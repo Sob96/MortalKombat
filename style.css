@@ -156,6 +156,7 @@ body {
     letter-spacing: 2px;
     color: #efefef;
     top: 0;
+    text-transform: uppercase;
 }
 
 .player1 .name {
@@ -207,5 +208,69 @@ body {
 
 .fight img {
     width: 100%;
+}
+
+.control {
+    position: absolute;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.button {
+    display: block;
+    position: relative;
+    padding: 0 16px;
+    height: 36px;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: #f5d100;
+    border: none;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: "Mortal Kombat 3";
+    outline: none;
+}
+.button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 4px;
+    left: 0;
+    background-color: #cd0e03;
+    border-radius: 4px;
+    z-index: -1;
+}
+.button:hover {
+    background-color: #f5d100;
+}
+.button:active {
+    top: 2px;
+}
+.button:active::after {
+    top: 1px;
+}
+
+.loseTitle {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: 36px;
+    transform: translate(-50%, 0%);
+    text-transform: uppercase;
+    z-index: 1000;
+    color: white;
+    font-family: "Mortal Kombat 3";
 }
 
