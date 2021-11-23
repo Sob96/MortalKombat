@@ -11,11 +11,47 @@
 <body>
     <div class="root">
         <div class="arenas arena1">
-            <div class="control">
-                <button class="button">
-                    Random
-                </button>
-            </div>
+            <form class="control">
+                <div class="inputWrap">
+                    <h2>HIT</h2>
+                    <div class="ul">
+                        <input type="radio" name="hit" value="head" id="headHit" required>
+                        <label for="headHit">
+                            <span>HEAD</span>
+                        </label>
+                        <input type="radio" name="hit" value="body" id="bodyHit" required>
+                        <label for="bodyHit">
+                            <span>BODY</span>
+                        </label>
+                        <input type="radio" name="hit" value="foot" id="footHit" required>
+                        <label for="footHit">
+                            <span>FOOT</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="inputWrap">
+                    <h2>defence</h2>
+                    <div class="ul">
+                        <input type="radio" name="defence" value="head" id="headDefence" required>
+                        <label for="headDefence">
+                            <span>HEAD</span>
+                        </label>
+                        <input type="radio" name="defence" value="body" id="bodyDefence" required>
+                        <label for="bodyDefence">
+                            <span>BODY</span>
+                        </label>
+                        <input type="radio" name="defence" value="foot" id="footDefence" required>
+                        <label for="footDefence">
+                            <span>FOOT</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="buttonWrap">
+                    <button class="button" type="submit">
+                        Fight
+                    </button>
+                </div>
+              </form>
         </div>
         <div class="chat"></div>
         <div class="wall-left"></div>
