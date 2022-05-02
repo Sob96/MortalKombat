@@ -1,4 +1,4 @@
-import {Game} from './battle.js';
+import {Game} from './components/Gameplay.js';
 
 const game = new Game();
 game.start();
