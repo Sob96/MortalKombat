@@ -60,7 +60,7 @@ async function init() {
             el.classList.add('active');
 
             setTimeout(() => {
-               window.location.pathname = '../index.html';
+               window.location.pathname = 'fightScreen/gameplay/gameplay.html';
             }, 1000);
         });
 

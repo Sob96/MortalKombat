@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Mortal Kombat 3';
-    src: url('./assets/fonts/MortalKombat3-Regular.eot');
-    src: url('./assets/fonts/MortalKombat3-Regular.eot?#iefix') format('embedded-opentype'),
-    url('./assets/fonts/MortalKombat3-Regular.woff2') format('woff2'),
-    url('./assets/fonts/MortalKombat3-Regular.woff') format('woff'),
-    url('./assets/fonts/MortalKombat3-Regular.ttf') format('truetype');
+    src: url('../../assets/fonts/MortalKombat3-Regular.eot');
+    src: url('../../assets/fonts/MortalKombat3-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/MortalKombat3-Regular.woff2') format('woff2'),
+    url('../../assets/fonts/MortalKombat3-Regular.woff') format('woff'),
+    url('../../assets/fonts/MortalKombat3-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -41,7 +41,7 @@ body {
 .wall-left {
     position: absolute;
     width: 87px;
-    background-image: url(assets/wall-left.png);
+    background-image: url(../../assets/wall-left.png);
     min-height: 100vh;
     background-size: contain;
     background-repeat: repeat-y;
@@ -55,7 +55,7 @@ body {
 .wall-right {
     position: absolute;
     width: 87px;
-    background-image: url(./assets/wall-right.png);
+    background-image: url(../../assets/wall-right.png);
     min-height: 100vh;
     background-size: contain;
     background-repeat: repeat-y;
@@ -77,23 +77,23 @@ body {
 }
 
 .arenas.arena1 {
-    background-image: url(./assets/scorpions-lair-arenas.png);
+    background-image: url(../../assets/scorpions-lair-arenas.png);
 }
 
 .arenas.arena2 {
-    background-image: url(./assets/the-cave.png);
+    background-image: url(../../assets/the-cave.png);
 }
 
 .arenas.arena3 {
-    background-image: url(./assets/jade-s-desert.png);
+    background-image: url(../../assets/jade-s-desert.png);
 }
 
 .arenas.arena4 {
-    background-image: url(./assets/scislac-busorez.png);
+    background-image: url(../../assets/scislac-busorez.png);
 }
 
 .arenas.arena5 {
-    background-image: url(./assets/waterfront.png);
+    background-image: url(../../assets/waterfront.png);
 }
 
 .player1,
@@ -172,7 +172,7 @@ body {
 .chat {
     width: 786px;
     height: 30vh;
-    background-image: url(./assets/versus.png);
+    background-image: url(../../assets/versus.png);
     background-size: cover;
     background-position: center;
     border-top: 4px solid #f5d100;
