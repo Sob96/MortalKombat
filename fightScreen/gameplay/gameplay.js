@@ -1,7 +1,7 @@
-import Player from './Players.js';
+import Player from '../players.js';
 import {HIT, ATTACK} from '../store/dataForBattle.js';
-import {createElement, getRandom} from './Utils.js';
-import generateLogs from './LogGeneration.js';
+import {createElement, getRandom} from '../utils.js';
+import generateLogs from '../logGeneration.js';
 
 const $divArenas = document.querySelector('.arenas');
 export const $chat = document.querySelector('.chat');
@@ -67,7 +67,7 @@ const enemyAttack = () => {
 const showResult = () => {
     if (player1.hp === 0 || player2.hp === 0) {
         createReloadButton();
-        const audio = new Audio('../assets/audio/fatality.mp3');
+        const audio = new Audio('../../assets/audio/fatality.mp3');
         audio.play();
     }
 
@@ -101,7 +101,7 @@ const createReloadButton = () => {
     $reloadWrap.appendChild($button);
     $divArenas.appendChild($reloadWrap);
 
-    $button.addEventListener('click', () => window.location.pathname = 'components/startScreen/selectFighter.html');
+    $button.addEventListener('click', () => window.location.pathname = '../../selectionScreen.html');
 }   
 
 $formFight.addEventListener('submit', (e) => {

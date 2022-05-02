@@ -1,6 +1,6 @@
-import logs from '../store/logs.js';
-import {getRandom, showNormalTime} from './Utils.js';
-import {$chat} from './Gameplay.js';
+import logs from './store/logs.js';
+import {getRandom, showNormalTime} from './utils.js';
+import {$chat} from './gameplay/gameplay.js';
 
 const generateLogs = (type, {name: player1Name}, {name: player2Name}, damage, remain) => {
     const date = new Date();
