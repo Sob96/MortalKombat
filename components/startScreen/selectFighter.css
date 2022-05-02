@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Mortal Kombat 3';
+    src: url('../../assets/fonts/MortalKombat3-Regular.eot');
+    src: url('../..//assets/fonts/MortalKombat3-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/MortalKombat3-Regular.woff2') format('woff2'),
+    url('../../assets/fonts/MortalKombat3-Regular.woff') format('woff'),
+    url('../../assets/fonts/MortalKombat3-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #424542;
+}
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    min-height: 100vh;
+    min-width: 100vh;
+    background-size: contain;
+    background-position: center;
+}
+
+.title {
+    font-family: "Mortal Kombat 3";
+    margin-bottom: 10px;
+    font-size: 48px;
+    color: #FFF;
+    top: 10px;
+    left: 50%;
+    color: #efefef;
+    text-shadow: 4px 2px 1px #000;
+    white-space: nowrap;
+}
+
+.player {
+    position: absolute;
+    width: 210px;
+    height: 367px;
+    z-index: 3;
+    bottom: -220px;
+    left: 50%;
+    margin-left: -105px;
+    transform: translate(-205%, 0px);
+}
+
+.player img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 1 / 4 / 2 / 5; }
+.div5 { grid-area: 1 / 5 / 2 / 6; }
+.div6 { grid-area: 1 / 6 / 2 / 7; }
+.div7 { grid-area: 1 / 7 / 2 / 8; }
+.div8 { grid-area: 2 / 1 / 3 / 2; }
+.div9 { grid-area: 2 / 2 / 3 / 3; }
+.div10 { grid-area: 2 / 3 / 3 / 4; }
+.div11 { grid-area: 2 / 4 / 3 / 5; }
+.div12 { grid-area: 2 / 5 / 3 / 6; }
+.div13 { grid-area: 2 / 6 / 3 / 7; }
+.div14 { grid-area: 2 / 7 / 3 / 8; }
+.div15 { grid-area: 3 / 2 / 4 / 3; }
+.div16 { grid-area: 3 / 3 / 4 / 4; }
+.div17 { grid-area: 3 / 4 / 4 / 5; }
+.div18 { grid-area: 3 / 5 / 4 / 6; }
+.div19 { grid-area: 3 / 6 / 4 / 7; }
+.div20 { grid-area: 4 / 2 / 5 / 3; }
+.div21 { grid-area: 4 / 3 / 5 / 4; }
+.div22 { grid-area: 4 / 4 / 5 / 5; }
+.div23 { grid-area: 4 / 5 / 5 / 6; }
+.div24 { grid-area: 4 / 6 / 5 / 7; }
+
+.row {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.row:hover {
+    z-index: 2;
+}
+.character {
+    width: 137px;
+    height: 176px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.character:hover,
+.character.active {
+    z-index: 2;
+}
+
+.character:hover:before,
+.character.active:before {
+    content: "";
+    display: block;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    position: absolute;
+    border: 14px solid #21aa21;
+}
+.character.disabled {
+    cursor: default;
+}
+.character.disabled:hover:before {
+    display: none;
+}
+
+.character img {
+    width: 100%;
+}
