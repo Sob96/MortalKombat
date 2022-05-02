@@ -101,7 +101,7 @@ const createReloadButton = () => {
     $reloadWrap.appendChild($button);
     $divArenas.appendChild($reloadWrap);
 
-    $button.addEventListener('click', () => window.location.pathname = '../../selectionScreen.html');
+    $button.addEventListener('click', () => window.location.pathname = '../../index.html');
 }   
 
 $formFight.addEventListener('submit', (e) => {
