@@ -1,4 +1,4 @@
-import {$divArenas, $chat, logs, player1, player2, createElement, createPlayer} from './prepForBattle.js'
+import {$divArenas, $chat, logs, Player, createElement} from './prepForBattle.js'
 
 export const $formFight = document.querySelector('.control');
 
@@ -142,9 +142,46 @@ $formFight.addEventListener('submit', (e) => {
 
 })
 
-export const startGame = () => {
-    $divArenas.appendChild(createPlayer(player1));
-    $divArenas.appendChild(createPlayer(player2));
-    generateLogs('start', player1, player2);
-}
 
+let player1;
+let player2;
+
+export class Game {
+    getPlayers = async () => {
+        const body = fetch('https://reactmarathon-api.herokuapp.com/api/mk/players').then(res => res.json());
+        return body
+    }
+    
+    computerChoice = async () => {
+        const choice = fetch('https://reactmarathon-api.herokuapp.com/api/mk/player/choose').then(res => res.json());
+        return choice
+    }
+
+    apiAttack = async () => {
+        fetch('http://reactmarathon-api.herokuapp.com/api/mk/player/fight', {
+    method: 'POST',
+    body: JSON.stringify(playerAttack())
+});
+    }
+
+    start = async () => {
+        const players = await this.getPlayers();
+        const p1 = players[getRandom(players.length) - 1];
+        const p2 = await this.computerChoice();
+        console.log(p1, p2);
+        player1 = new Player({
+            ...p1,
+            player: 1,
+            rootSelector: 'arenas',
+        });
+
+        player2 = new Player({
+            ...p2,
+            player: 2,
+            rootSelector: 'arenas',
+        })
+        $divArenas.appendChild(player1.createPlayer());
+        $divArenas.appendChild(player2.createPlayer());
+        generateLogs('start', player1, player2);
+    }
+}

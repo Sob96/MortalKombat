@@ -43,7 +43,7 @@ export const logs = {
 };
 
 
-class Player {
+export class Player {
     constructor(props) {
         this.player = props.player;
         this.name = props.name;
@@ -68,10 +68,35 @@ class Player {
         const $playerLifeContainer = this.elHP(); 
        $playerLifeContainer.style.width = this.hp + '%';
     };
+
+    createPlayer() {
+        const $playerDiv = createElement('div', `player${this.player}`);
+    
+        const $playerProgressbar = createElement('div', 'progressbar');
+        $playerDiv.appendChild($playerProgressbar);
+    
+        const $playerCharacter = createElement('div', 'character');
+        $playerDiv.appendChild($playerCharacter);
+    
+        const $progressbarLife = createElement('div', 'life');
+        $progressbarLife.style.width = this.hp + '%';
+        $playerProgressbar.appendChild($progressbarLife);
+    
+        const $progressbarName = createElement('div', 'name');
+        $progressbarName.innerText = this.name;
+        $playerProgressbar.appendChild($progressbarName);
+    
+        const $characterImg = createElement('img');
+        $characterImg.src = this.img;
+        $playerCharacter.appendChild($characterImg);
+    
+        return $playerDiv
+    }
+    
+    
 }
 
-export const player1 = new Player({player: 1, name: 'Scorpion', hp: 100, img: 'http://reactmarathon-api.herokuapp.com/assets/scorpion.gif'});
-export const player2 = new Player({player: 2, name: 'Sub-zero', hp: 100, img: 'http://reactmarathon-api.herokuapp.com/assets/subzero.gif'})
+
 
 export function createElement(tag, className) {
     const $tag = document.createElement(tag);
@@ -83,28 +108,4 @@ export function createElement(tag, className) {
     return $tag;
 }
 
-
-export function createPlayer({player, name, hp, img }) {
-    const $playerDiv = createElement('div', `player${player}`);
-
-    const $playerProgressbar = createElement('div', 'progressbar');
-    $playerDiv.appendChild($playerProgressbar);
-
-    const $playerCharacter = createElement('div', 'character');
-    $playerDiv.appendChild($playerCharacter);
-
-    const $progressbarLife = createElement('div', 'life');
-    $progressbarLife.style.width = hp + '%';
-    $playerProgressbar.appendChild($progressbarLife);
-
-    const $progressbarName = createElement('div', 'name');
-    $progressbarName.innerText = name;
-    $playerProgressbar.appendChild($progressbarName);
-
-    const $characterImg = createElement('img');
-    $characterImg.src = img;
-    $playerCharacter.appendChild($characterImg);
-
-    return $playerDiv
-}
 
