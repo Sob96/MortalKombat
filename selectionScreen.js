@@ -29,7 +29,6 @@ async function init() {
     localStorage.removeItem('player1');
 
     const players = await fetch('https://reactmarathon-api.herokuapp.com/api/mk/players').then(res => res.json());
-    console.log(players);
     players[10].img = 'http://reactmarathon-api.herokuapp.com/assets/mk/fightingStance/subzero.gif';
     let imgSrc = null;
     createEmptyPlayerBlock();
@@ -61,7 +60,7 @@ async function init() {
             el.classList.add('active');
 
             setTimeout(() => {
-               window.location.pathname = 'MortalKombat/fightScreen/gameplay/index.html';
+               window.location.pathname = 'fightScreen/gameplay/index.html';
             }, 1000);
         });
 
