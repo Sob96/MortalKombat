@@ -20,7 +20,7 @@ const createElement = (tag, className) => {
 function createEmptyPlayerBlock() {
     const el = createElement('div', ['character', 'div11', 'disabled']);
     const img = createElement('img');
-    img.src = 'http://reactmarathon-api.herokuapp.com/assets/mk/avatar/11.png';
+    img.src = 'https://reactmarathon-api.herokuapp.com/assets/mk/avatar/11.png';
     el.appendChild(img);
     $parent.appendChild(el);
 }
@@ -29,7 +29,7 @@ async function init() {
     localStorage.removeItem('player1');
 
     const players = await fetch('https://reactmarathon-api.herokuapp.com/api/mk/players').then(res => res.json());
-    players[10].img = 'http://reactmarathon-api.herokuapp.com/assets/mk/fightingStance/subzero.gif';
+    players[10].img = 'https://reactmarathon-api.herokuapp.com/assets/mk/fightingStance/subzero.gif';
     let imgSrc = null;
     createEmptyPlayerBlock();
 
